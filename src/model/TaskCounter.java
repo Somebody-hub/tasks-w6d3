@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 import java.util.*;
 
@@ -15,8 +15,16 @@ public class TaskCounter {
     }
 
     public int allTask() {
+        int sum = 0;
+        for (Map.Entry<TaskStatus, Integer> entry : taskCounter.entrySet()) {
+            sum += entry.getValue();
+        }
+        return sum;
+        /*
         return taskCounter.values().stream()
                 .mapToInt(x -> x)
                 .sum();
+
+         */
     }
 }

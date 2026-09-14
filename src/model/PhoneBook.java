@@ -1,7 +1,6 @@
-package Model;
+package model;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class PhoneBook {
     private final Map<String, String> PhoneBook = new HashMap<>();
@@ -15,10 +14,17 @@ public class PhoneBook {
     }
 
     public List<String> findAllPhonesByName(String name) {
-        return PhoneBook.entrySet().stream()
+        List<String> result = new ArrayList<>();
+        for (Map.Entry<String, String> entry : PhoneBook.entrySet()) {
+            if (entry.getValue().equalsIgnoreCase(name))
+                result.add(entry.getKey());
+        }
+        return result;
+        /* return PhoneBook.entrySet().stream()
                 .filter(x -> x.getValue().equalsIgnoreCase(name))
                 .map(Map.Entry::getKey)
                 .collect(Collectors.toList());
+         */
     }
 
 }

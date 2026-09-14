@@ -1,4 +1,4 @@
-import Model.*;
+import model.*;
 
 import java.util.List;
 
@@ -17,8 +17,9 @@ public class Main {
         Product p2 = new Product("Water", 0.49);
         Product p3 = new Product("Water", 0.99);
         warehouse.addProduct(0L, p1);
-        warehouse.addProduct(1L ,p2);
+        warehouse.addProduct(1L, p2);
         warehouse.addProduct(2L, p3);
+        System.out.println(warehouse.getProductByArticle(1L));
         System.out.printf("%.2f\n", warehouse.allProductCost());
         System.out.println(warehouse.getArticlesByTitle("Water"));
         System.out.println();

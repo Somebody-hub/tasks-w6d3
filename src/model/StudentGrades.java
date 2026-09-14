@@ -1,4 +1,4 @@
-package Model;
+package model;
 
 import java.util.*;
 
@@ -26,13 +26,22 @@ public class StudentGrades {
     }
 
     public void getAllAverageGrades() {
-        studentGrades.forEach((student, grade) -> {
+        for (Map.Entry<String, List<Integer>> entry : studentGrades.entrySet()) {
+            int sum = 0;
+            for (int grade : entry.getValue()) {
+                sum += grade;
+            }
+            double avg = (double) sum / entry.getValue().size();
+            System.out.printf("%s average grade: %.2f\n", entry.getKey(), avg);
+        }
+        /*studentGrades.forEach((student, grade) -> {
             double avg = grade.stream()
                     .mapToDouble(x -> x)
                     .average()
                     .orElse(0.0);
             System.out.printf("%s average grade: %.2f\n", student, avg);
         });
+         */
     }
 
 }
