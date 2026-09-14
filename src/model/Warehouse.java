@@ -3,18 +3,14 @@ package model;
 import java.util.*;
 
 public class Warehouse {
-    Map<Long, Product> warehouse = new HashMap<>();
+    private final Map<Long, Product> warehouse = new HashMap<>();
 
     public void addProduct(Long article, Product product) {
         warehouse.put(article, product);
     }
 
     public Optional<Product> getProductByArticle(Long article) {
-        Optional<Product> res = Optional.ofNullable(warehouse.get(article));
-        if (res.isEmpty()) {
-            System.out.println("Unknown article");
-        }
-        return res;
+        return Optional.ofNullable(warehouse.get(article));
     }
 
     public double allProductCost() {

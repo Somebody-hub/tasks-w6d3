@@ -4,7 +4,7 @@ import java.util.*;
 
 
 public class TaskCounter {
-    Map<TaskStatus, Integer> taskCounter = new HashMap<>();
+    private final Map<TaskStatus, Integer> taskCounter = new HashMap<>();
 
     public void addTask(TaskStatus taskStatus) {
         taskCounter.put(taskStatus, taskCounter.getOrDefault(taskStatus, 0) + 1);

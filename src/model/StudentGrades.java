@@ -3,7 +3,7 @@ package model;
 import java.util.*;
 
 public class StudentGrades {
-    Map<String, List<Integer>> studentGrades = new HashMap<>();
+    private final Map<String, List<Integer>> studentGrades = new HashMap<>();
 
     public void addStudent(String student) {
         if (!studentGrades.containsKey(student)) {
@@ -20,9 +20,7 @@ public class StudentGrades {
     }
 
     public void printAllStudents() {
-        studentGrades.forEach((student, grades) -> {
-            System.out.println(student + ": " + grades);
-        });
+        studentGrades.forEach((student, grades) -> System.out.println(student + ": " + grades));
     }
 
     public void getAllAverageGrades() {
