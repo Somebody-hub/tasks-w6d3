@@ -40,7 +40,7 @@ public class Main {
         studentGrades.addStudent("Charlie", List.of(95, 100, 98));
         studentGrades.printAllStudents();
         System.out.println("==Average Grades==");
-        studentGrades.getAllAverageGrades();
+        studentGrades.printAllAverageGrades();
 
     }
 }

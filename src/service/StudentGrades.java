@@ -23,7 +23,7 @@ public class StudentGrades {
         studentGrades.forEach((student, grades) -> System.out.println(student + ": " + grades));
     }
 
-    public void getAllAverageGrades() {
+    public void printAllAverageGrades() {
         for (Map.Entry<String, List<Integer>> entry : studentGrades.entrySet()) {
             int sum = 0;
             for (int grade : entry.getValue()) {
