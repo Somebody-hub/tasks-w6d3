@@ -11,7 +11,7 @@ public class TaskCounter {
     }
 
     public int getCountsByStatus(TaskStatus taskStatus) {
-        return taskCounter.get(taskStatus);
+        return taskCounter.getOrDefault(taskStatus, 0);
     }
 
     public int allTask() {
